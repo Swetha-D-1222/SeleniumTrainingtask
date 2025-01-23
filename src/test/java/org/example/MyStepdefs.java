@@ -185,7 +185,7 @@ public class MyStepdefs
     @Then("Check if the order id  for the ordered product is available")
     public void checkIfTheOrderIdForTheOrderedProductIsAvailable()
     {
-        WebElement orderIdEntered=driver.findElement(By.xpath("(//td[@class=\"woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number\"]/child::a)[1]"));
+        WebElement orderIdEntered=driver.findElement(HomePage.newOrder);
         int OrderId=Integer.parseInt(orderIdEntered.getText().replaceAll("#",""));
         Assert.assertEquals(orderId,OrderId,"Order not present");
         driver.quit();
